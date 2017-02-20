@@ -1,0 +1,20 @@
+upstream webtier {
+    server web-1;
+    server web-2;
+    server web-3;
+    server web-4;
+    server web-5;
+    server web-6;
+    server web-7;
+    server web-8;
+    server web-9;
+    server web-10;
+}
+
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://webtier;
+    }
+}
